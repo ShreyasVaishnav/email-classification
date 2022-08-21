@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Email / SMS Spam Detector</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+    </script>
+</head>
+
+<body>
+    <br>
+    <div class="container" style="color:green">
+        <br>
+        <p>Author : Shreyas Vaishnav</p>
+
+        <h1>
+            <center>Email / SMS Spam Detector</center>
+        </h1>
+    </div>
+    <hr>
+    <!---->
+    <div class="container">
+        <!--<h4>Vertical Form -> Example:1</h4>-->
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Enter your text here!</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" , name="email_content"></textarea>
+            </div>
+            <!--
+            <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" placeholder="Enter your password">
+            </div> -->
+
+            <div class="container">
+                <button type="submit" class="btn btn-success">
+                    Predict
+                </button>
+                <!---
+                <button type="button" class="btn btn-secondary">
+                    Register
+                </button> -->
+            </div>
+            <!-- {% if label %} {% if label==0 %}
+            <h2 style="color:green">Not Spam</h2>
+            {% else %}
+            <h2 style="color:red">Spam</h2>
+            {% endif %} {% endif %} -->
+        </form>
+
+        <h2>{{ prediction }} </h2>
+
+    </div>
+
+</body>
+
+</html>
